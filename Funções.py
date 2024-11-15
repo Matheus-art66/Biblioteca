@@ -31,8 +31,8 @@ def limpar_tela():
 
 def adcionar_livro():
         novo_id = gerar_novo_id(dados)
-        titulo = input("Informe o Título do livro:\n")
-        autor = input("Informe o Autor do livro:\n")
+        titulo = input("Informe o Título do livro:\n").lower()
+        autor = input("Informe o Autor do livro:\n").lower()
         dataNascimento = input("informe a data de nascimento do Autor!\n")
         livros = {
                 "id": novo_id,
@@ -46,6 +46,9 @@ def adcionar_livro():
              "autor": autor,
              "data_Nascimento":dataNascimento
         }
+        alunos = {
+
+        }
         dados["Livros"].append(livros)
         dados["Autores"].append(autores)
         salvar_dados(dados)
@@ -53,7 +56,7 @@ def adcionar_livro():
         return
 
 def listar_livro():
-    dados = carregar_dados()
+    dados 
     if dados["Livros"]:
         print("\nLista de Livros")
         for paginas in dados["Livros"]:
@@ -62,7 +65,7 @@ def listar_livro():
         print("Nenhum livro dentro da lista!")
 
 def listar_Autores():
-    dados = carregar_dados()
+    dados
     if dados["Autores"]:
         print("\nLista de Autores")
         for paginas in dados["Autores"]:
@@ -71,7 +74,7 @@ def listar_Autores():
         print("Nenhum Autor foi adcionado para listar!")
 
 def deletar_livro():
-    dados = carregar_dados()
+    dados
     if dados["Livros"]:
         print("\nLivros cadastrados:")
         for paginas in dados["Livros"]:
@@ -99,16 +102,18 @@ def deletar_livro():
         print("\nNenhum livro cadastrado.")
 
 def realizar_emprestimo():
-    dados = carregar_dados()
+    dados
     print("Livros disponíveis para empréstimo:")
     for livro in dados["Livros"]:
         if livro["Disponivel"]:
             print(f"ID: {livro['id']}, Título: {livro['titulo']}, Autor: {livro['autor']}")
     id_livro = int(input("Digite o ID do livro que deseja emprestar: "))
+
     if str(livro["id"]) == str(id_livro):
         if livro["Disponivel"]:
             livro["Disponivel"] = False
             print(f"O livro '{livro['titulo']}' foi emprestado com sucesso!")
+            dados['Emprestimos'].append('Livros')
             salvar_dados(dados)
             return
         else:
@@ -116,7 +121,7 @@ def realizar_emprestimo():
             return
 
 def listar_livros_disponiveis():
-    dados = carregar_dados()  
+    dados  
     livros_disponiveis = False  
 
     print("Livros disponíveis para empréstimo:")
@@ -128,8 +133,29 @@ def listar_livros_disponiveis():
     if not livros_disponiveis:
         print("Nenhum livro registrado")
 
+def buscar_livro():
+    dados
+    buscar = input("Digite o Título ou nome do autor:\n").lower()
+    limpar_tela()
+    encontrou = False
+    
+    for livro in dados["Livros"]:
+        if (buscar in livro["titulo"].lower() or buscar in livro["autor"].lower()):
+            if livro["Disponivel"]:
+                print(f'Título: {livro["titulo"]}, Autor: {livro["autor"]} - Disponível para empréstimo!')
+                encontrou = True
+                salvar_dados(dados)
+
+            else:
+                print(f'Título: {livro["titulo"]}, Autor: {livro["autor"]} - Já está emprestado.')
+                encontrou = True
+                
+        if not encontrou:
+            print("Nenhum livro encontrado com o título ou autor informado.")
+
+
 def listar_livros_emprestados():
-    dados = carregar_dados()
+    dados
     livros_emprestados = False  
 
     print("Livros atualmente emprestados:")
@@ -142,7 +168,7 @@ def listar_livros_emprestados():
         print("Nenhum livro emprestado no momento.")
 
 def retirar_emprestimo():
-    dados = carregar_dados()
+    dados
     listar_livros_emprestados() 
     id_para_retirar = input("Digite o ID do livro que deseja retirar do empréstimo: ")
 

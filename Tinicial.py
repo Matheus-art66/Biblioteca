@@ -1,5 +1,5 @@
 import json 
-from Funções import limpar_tela,adcionar_livro ,deletar_livro,listar_livro,listar_Autores,realizar_emprestimo,listar_livros_disponiveis,retirar_emprestimo
+from Funções import limpar_tela,adcionar_livro ,deletar_livro,listar_livro,listar_Autores,realizar_emprestimo,listar_livros_disponiveis,retirar_emprestimo, buscar_livro
 import os
 
 
@@ -63,7 +63,7 @@ while True:
         limpar_tela()
         while True:
             print("-"*5,"Emprestimos", "-"*5)
-            resp = input('Digite uma das opções:\n1- Emprestimo de livro\n2- Livros disponiveis para emprestimo\n3- Livros emprestados\n3-Sair\n')
+            resp = input('Digite uma das opções:\n1-Emprestimo de livro\n2-Livros disponiveis para emprestimo\n3-Livros emprestados\n4-Buscar livro\n5-Sair\n')
             if not resp.isdigit():
                 limpar_tela()
                 print('Digite um valor Valido!')
@@ -79,6 +79,9 @@ while True:
             elif resp == 3:
                 limpar_tela()
                 retirar_emprestimo()
+            elif resp == 4:
+                limpar_tela()
+                buscar_livro()
             else:
                 break
     else:
