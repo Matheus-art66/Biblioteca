@@ -1,0 +1,46 @@
+{
+    "Livros": [
+        {
+            "id": 1,
+            "titulo": "SEU PAI",
+            "valor": "10923",
+            "autor": "Matheus",
+            "data_Cadastro": "2024-11-06 15:41:21",
+            "Disponivel": true
+        },
+        {
+            "id": 2,
+            "titulo": "Maconheiro",
+            "valor": "1500",
+            "autor": "Antonio",
+            "data_Cadastro": "2024-11-06 15:41:21",
+            "Disponivel": true
+        },
+        {
+            "id": 3,
+            "titulo": "Tecnico",
+            "valor": "350321",
+            "autor": "Isaiah",
+            "data_Cadastro": "2024-11-06 15:41:21",
+            "Disponivel": true
+        }
+    ],
+    "Autores": [
+        {
+            "id": 1,
+            "autor": "Matheus",
+            "data_Nascimento": "2003"
+        },
+        {
+            "id": 2,
+            "autor": "Antonio",
+            "data_Nascimento": "2005"
+        },
+        {
+            "id": 3,
+            "autor": "Isaiah",
+            "data_Nascimento": "2004"
+        }
+    ],
+    "Emprestimos": []
+}
