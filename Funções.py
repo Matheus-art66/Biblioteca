@@ -32,13 +32,11 @@ def limpar_tela():
 def adcionar_livro():
         novo_id = gerar_novo_id(dados)
         titulo = input("Informe o Título do livro:\n")
-        valor = input("Digite o Valor do Livro:\n")
         autor = input("Informe o Autor do livro:\n")
         dataNascimento = input("informe a data de nascimento do Autor!\n")
         livros = {
                 "id": novo_id,
                 "titulo": titulo,
-                "valor":valor,
                 "autor": autor,
                 "data_Cadastro": data,
                 "Disponivel": True
@@ -59,7 +57,7 @@ def listar_livro():
     if dados["Livros"]:
         print("\nLista de Livros")
         for paginas in dados["Livros"]:
-            print(f"ID: {paginas['id']}, titulo: {paginas['titulo']}, Preço:{paginas['valor']}, Autor: {paginas['autor']}, data_Cadastro: {paginas['data_Cadastro']}\n")
+            print(f"titulo: {paginas['titulo']}, Autor: {paginas['autor']}, data_Cadastro: {paginas['data_Cadastro']}\n")
     else:
         print("Nenhum livro dentro da lista!")
 
