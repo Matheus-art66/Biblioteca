@@ -1,18 +1,5 @@
 {
-    "Livros": [
-        {
-            "id": 1,
-            "titulo": "Seu pai",
-            "autor": "vagabuno",
-            "data_Cadastro": "2024-11-15 18:53:19",
-            "Disponivel": false
-        }
-    ],
-    "Autores": [
-        {
-            "id": 1,
-            "autor": "vagabuno",
-            "data_Nascimento": "19/08/"
-        }
-    ]
+    "Livros": [],
+    "Autores": [],
+    "Alunos": []
 }

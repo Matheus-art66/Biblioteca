@@ -18,6 +18,21 @@ def salvar_dados(dados):
     with open(arquivo_json, 'w') as arquivo:
         json.dump(dados, arquivo, indent=4)
 
+def alunos():
+    nome = input("Digite o nome de usuario!\n").lower()
+    datanascimento = input("Informe da Data de Nascimento:\n")
+    email = input("Informe o Email do usuario:\n").lower()
+    aluno = {
+        "id": gerar_novo_id(dados), 
+        "nome": nome, 
+        "dataNascimento":datanascimento, 
+        "email":email
+    }
+    dados["Alunos"].append(aluno)
+    salvar_dados(dados)
+    limpar_tela()
+    return
+
 def gerar_novo_id(dados):
     if dados["Livros"]:
         ultimo_id = dados["Livros"][-1]["id"]
@@ -45,9 +60,6 @@ def adcionar_livro():
              "id": novo_id,
              "autor": autor,
              "data_Nascimento":dataNascimento
-        }
-        alunos = {
-
         }
         dados["Livros"].append(livros)
         dados["Autores"].append(autores)
@@ -152,7 +164,6 @@ def buscar_livro():
                 
         if not encontrou:
             print("Nenhum livro encontrado com o título ou autor informado.")
-
 
 def listar_livros_emprestados():
     dados
