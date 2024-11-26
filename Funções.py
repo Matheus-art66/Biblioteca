@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 
-data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+data = datetime.now().strftime("Data:%d/%m/%Y")
 
 
 arquivo_json = 'User.json'
